@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FacetimeUI' do
+  use_frameworks!
+  pod 'SteviaLayout'
+  pod 'SwiftLint'
+  target 'FacetimeUITests' do
+    inherit! :search_paths
+  end
+
+end

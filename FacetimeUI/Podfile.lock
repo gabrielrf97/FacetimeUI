@@ -1,0 +1,20 @@
+PODS:
+  - SteviaLayout (4.7.3)
+  - SwiftLint (0.39.1)
+
+DEPENDENCIES:
+  - SteviaLayout
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - SteviaLayout
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+
+PODFILE CHECKSUM: e49e244ba0deb771baaa2fb7c07ef49901ae9ca2
+
+COCOAPODS: 1.9.1

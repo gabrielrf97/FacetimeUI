@@ -102,7 +102,7 @@ class Icon: UIView, ViewCode {
     func additionalSetup() {
         iconButton.layer.cornerRadius = iconButton.frame.height / 2
         iconButton.layer.masksToBounds = true
-        backgroundColor = .yellow
+//        backgroundColor = .yellow
     }
     
     @objc func tapped() {
