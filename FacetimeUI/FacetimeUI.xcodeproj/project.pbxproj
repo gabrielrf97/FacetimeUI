@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D696338242B9261001530F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696337242B9261001530F1 /* AppDelegate.swift */; };
+		7D69633A242B9261001530F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696339242B9261001530F1 /* SceneDelegate.swift */; };
+		7D69633C242B9261001530F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69633B242B9261001530F1 /* ViewController.swift */; };
+		7D696341242B9263001530F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D696340242B9263001530F1 /* Assets.xcassets */; };
+		7D696344242B9263001530F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D696342242B9263001530F1 /* LaunchScreen.storyboard */; };
+		7D69634F242B9263001530F1 /* FacetimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69634E242B9263001530F1 /* FacetimeUITests.swift */; };
+		7D69635D242B9402001530F1 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69635C242B9402001530F1 /* CallViewController.swift */; };
+		7D696360242B94E3001530F1 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69635F242B94E3001530F1 /* Icon.swift */; };
+		7D696363242B95C1001530F1 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696362242B95C1001530F1 /* ViewCode.swift */; };
+		7D696365242B9988001530F1 /* PrintIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696364242B9988001530F1 /* PrintIcon.swift */; };
+		7D696367242B9CEE001530F1 /* ControllsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696366242B9CEE001530F1 /* ControllsView.swift */; };
+		7D69636A242BA572001530F1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696369242BA572001530F1 /* UIViewExt.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D69634B242B9263001530F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D69632C242B9261001530F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D696333242B9261001530F1;
+			remoteInfo = FacetimeUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D696334242B9261001530F1 /* FacetimeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacetimeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D696337242B9261001530F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D696339242B9261001530F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7D69633B242B9261001530F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D696340242B9263001530F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D696343242B9263001530F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D696345242B9263001530F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D69634A242B9263001530F1 /* FacetimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacetimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D69634E242B9263001530F1 /* FacetimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetimeUITests.swift; sourceTree = "<group>"; };
+		7D696350242B9263001530F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D69635C242B9402001530F1 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		7D69635F242B94E3001530F1 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		7D696362242B95C1001530F1 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		7D696364242B9988001530F1 /* PrintIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintIcon.swift; sourceTree = "<group>"; };
+		7D696366242B9CEE001530F1 /* ControllsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllsView.swift; sourceTree = "<group>"; };
+		7D696369242BA572001530F1 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D696331242B9261001530F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D696347242B9263001530F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D69632B242B9261001530F1 = {
+			isa = PBXGroup;
+			children = (
+				7D696336242B9261001530F1 /* FacetimeUI */,
+				7D69634D242B9263001530F1 /* FacetimeUITests */,
+				7D696335242B9261001530F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D696335242B9261001530F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D696334242B9261001530F1 /* FacetimeUI.app */,
+				7D69634A242B9263001530F1 /* FacetimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D696336242B9261001530F1 /* FacetimeUI */ = {
+			isa = PBXGroup;
+			children = (
+				7D696361242B95B6001530F1 /* Helpers */,
+				7D69635E242B94D3001530F1 /* Components */,
+				7D69635A242B928D001530F1 /* Modules */,
+				7D696359242B927F001530F1 /* App */,
+				7D69633B242B9261001530F1 /* ViewController.swift */,
+				7D696340242B9263001530F1 /* Assets.xcassets */,
+				7D696342242B9263001530F1 /* LaunchScreen.storyboard */,
+				7D696345242B9263001530F1 /* Info.plist */,
+			);
+			path = FacetimeUI;
+			sourceTree = "<group>";
+		};
+		7D69634D242B9263001530F1 /* FacetimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D69634E242B9263001530F1 /* FacetimeUITests.swift */,
+				7D696350242B9263001530F1 /* Info.plist */,
+			);
+			path = FacetimeUITests;
+			sourceTree = "<group>";
+		};
+		7D696359242B927F001530F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7D696337242B9261001530F1 /* AppDelegate.swift */,
+				7D696339242B9261001530F1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7D69635A242B928D001530F1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7D69635B242B9295001530F1 /* Call */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7D69635B242B9295001530F1 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				7D69635C242B9402001530F1 /* CallViewController.swift */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		7D69635E242B94D3001530F1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7D69635F242B94E3001530F1 /* Icon.swift */,
+				7D696364242B9988001530F1 /* PrintIcon.swift */,
+				7D696366242B9CEE001530F1 /* ControllsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7D696361242B95B6001530F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7D696368242BA566001530F1 /* Extensions */,
+				7D696362242B95C1001530F1 /* ViewCode.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D696368242BA566001530F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D696369242BA572001530F1 /* UIViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D696333242B9261001530F1 /* FacetimeUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D696353242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUI" */;
+			buildPhases = (
+				7D696330242B9261001530F1 /* Sources */,
+				7D696331242B9261001530F1 /* Frameworks */,
+				7D696332242B9261001530F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FacetimeUI;
+			productName = FacetimeUI;
+			productReference = 7D696334242B9261001530F1 /* FacetimeUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D696349242B9263001530F1 /* FacetimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D696356242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUITests" */;
+			buildPhases = (
+				7D696346242B9263001530F1 /* Sources */,
+				7D696347242B9263001530F1 /* Frameworks */,
+				7D696348242B9263001530F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D69634C242B9263001530F1 /* PBXTargetDependency */,
+			);
+			name = FacetimeUITests;
+			productName = FacetimeUITests;
+			productReference = 7D69634A242B9263001530F1 /* FacetimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D69632C242B9261001530F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Gabriel Rodrigues";
+				TargetAttributes = {
+					7D696333242B9261001530F1 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					7D696349242B9263001530F1 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 7D696333242B9261001530F1;
+					};
+				};
+			};
+			buildConfigurationList = 7D69632F242B9261001530F1 /* Build configuration list for PBXProject "FacetimeUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D69632B242B9261001530F1;
+			productRefGroup = 7D696335242B9261001530F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D696333242B9261001530F1 /* FacetimeUI */,
+				7D696349242B9263001530F1 /* FacetimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D696332242B9261001530F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D696344242B9263001530F1 /* LaunchScreen.storyboard in Resources */,
+				7D696341242B9263001530F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D696348242B9263001530F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D696330242B9261001530F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D69633C242B9261001530F1 /* ViewController.swift in Sources */,
+				7D696365242B9988001530F1 /* PrintIcon.swift in Sources */,
+				7D696338242B9261001530F1 /* AppDelegate.swift in Sources */,
+				7D69635D242B9402001530F1 /* CallViewController.swift in Sources */,
+				7D696367242B9CEE001530F1 /* ControllsView.swift in Sources */,
+				7D696360242B94E3001530F1 /* Icon.swift in Sources */,
+				7D69633A242B9261001530F1 /* SceneDelegate.swift in Sources */,
+				7D69636A242BA572001530F1 /* UIViewExt.swift in Sources */,
+				7D696363242B95C1001530F1 /* ViewCode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D696346242B9263001530F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D69634F242B9263001530F1 /* FacetimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D69634C242B9263001530F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D696333242B9261001530F1 /* FacetimeUI */;
+			targetProxy = 7D69634B242B9263001530F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D696342242B9263001530F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D696343242B9263001530F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D696351242B9263001530F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D696352242B9263001530F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D696354242B9263001530F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J564QJA4;
+				INFOPLIST_FILE = FacetimeUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielrodrigues.FacetimeUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D696355242B9263001530F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J564QJA4;
+				INFOPLIST_FILE = FacetimeUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielrodrigues.FacetimeUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D696357242B9263001530F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J564QJA4;
+				INFOPLIST_FILE = FacetimeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielrodrigues.FacetimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacetimeUI.app/FacetimeUI";
+			};
+			name = Debug;
+		};
+		7D696358242B9263001530F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J564QJA4;
+				INFOPLIST_FILE = FacetimeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielrodrigues.FacetimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacetimeUI.app/FacetimeUI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D69632F242B9261001530F1 /* Build configuration list for PBXProject "FacetimeUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D696351242B9263001530F1 /* Debug */,
+				7D696352242B9263001530F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D696353242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D696354242B9263001530F1 /* Debug */,
+				7D696355242B9263001530F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D696356242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D696357242B9263001530F1 /* Debug */,
+				7D696358242B9263001530F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D69632C242B9261001530F1 /* Project object */;
+}
