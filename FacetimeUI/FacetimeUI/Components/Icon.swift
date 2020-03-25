@@ -49,7 +49,7 @@ fileprivate enum LayoutConstraints: CGFloat {
 
 class Icon: UIView, ViewCode {
     
-    var iconButton: UIButton!
+    var iconButton: UIView!
     var iconLabel: UILabel!
     
     var type: IconType!
@@ -71,11 +71,15 @@ class Icon: UIView, ViewCode {
     }
     
     func createElements() {
-        iconButton = UIButton()
+        iconButton = UIView()
         iconButton.backgroundColor = type.getDefaultColor()
+        iconButton.backgroundColor = .orange
+        iconButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iconButton)
         
         iconLabel = UILabel()
+        iconLabel.backgroundColor = .purple
+        iconLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iconLabel)
     }
     
@@ -98,6 +102,7 @@ class Icon: UIView, ViewCode {
     func additionalSetup() {
         iconButton.layer.cornerRadius = iconButton.frame.height / 2
         iconButton.layer.masksToBounds = true
+        backgroundColor = .yellow
     }
     
     @objc func tapped() {

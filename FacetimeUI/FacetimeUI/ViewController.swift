@@ -12,9 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let chatVC = CallViewController()
+        chatVC.modalPresentationStyle = .fullScreen
+        self.present(chatVC, animated: true, completion: nil)
     }
 
-
+    @IBAction func presentTapped(_ sender: Any) {
+        
+    }
+    
 }
 

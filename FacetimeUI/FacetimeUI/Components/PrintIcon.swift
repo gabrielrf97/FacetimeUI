@@ -26,13 +26,14 @@ class PrintIcon: UIView, ViewCode {
         innerView = UIView()
         innerView.backgroundColor = .white
         innerView.layer.borderColor = UIColor.black.cgColor
-        innerView.layer.borderWidth = 1
+        innerView.layer.borderWidth = 1.5
+        innerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(innerView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            innerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
+            innerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             innerView.heightAnchor.constraint(equalTo: innerView.widthAnchor),
             innerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             innerView.centerXAnchor.constraint(equalTo: centerXAnchor)
@@ -41,9 +42,13 @@ class PrintIcon: UIView, ViewCode {
     
     func additionalSetup() {
         backgroundColor = .white
-        layer.cornerRadius = bounds.height / 2
-        layer.masksToBounds = true
     }
     
+    func setRadius() {
+        layer.cornerRadius = 30
+        layer.masksToBounds = true
+        innerView.layer.cornerRadius = 25
+        innerView.layer.masksToBounds = true
+    }
     
 }

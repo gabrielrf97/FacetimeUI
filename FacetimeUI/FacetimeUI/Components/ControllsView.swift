@@ -28,48 +28,95 @@ class ControllsView: UIView, ViewCode {
     }
     
     func createElements() {
+        
         viewActionIndicator = UIView()
-        viewActionIndicator.backgroundColor = .systemGray
+        viewActionIndicator.backgroundColor = .white
+        viewActionIndicator.translatesAutoresizingMaskIntoConstraints = false
+        viewActionIndicator.layer.masksToBounds = true
+        viewActionIndicator.layer.cornerRadius = 2
         addSubview(viewActionIndicator)
         
-        iconsStackView = UIStackView()
-        iconsStackView.alignment = .fill
-        addSubview(iconsStackView)
+//        iconsStackView = UIStackView()
+//        iconsStackView.backgroundColor = .green
+//        iconsStackView.alignment = .fill
+//        iconsStackView.distribution = .fillProportionally
+//        iconsStackView.axis = .horizontal
+//        iconsStackView.translatesAutoresizingMaskIntoConstraints = false
+//        addSubview(iconsStackView)
         
         effectsIcon = Icon(type: .effects)
-        iconsStackView.addSubview(effectsIcon)
+        effectsIcon.translatesAutoresizingMaskIntoConstraints = false
+        effectsIcon.backgroundColor = .red
+        addSubview(effectsIcon)
         
         muteIcon = Icon(type: .mute)
-        iconsStackView.addSubview(muteIcon)
+        muteIcon.translatesAutoresizingMaskIntoConstraints = false
+        muteIcon.backgroundColor = .green
+        addSubview(muteIcon)
         
         turnCameraIcon = Icon(type: .turnCamera)
-        iconsStackView.addSubview(turnCameraIcon)
+        turnCameraIcon.translatesAutoresizingMaskIntoConstraints = false
+        turnCameraIcon.backgroundColor = .orange
+        addSubview(turnCameraIcon)
         
         turnOffIcon = Icon(type: .turnOff)
-        iconsStackView.addSubview(turnOffIcon)
+        turnOffIcon.translatesAutoresizingMaskIntoConstraints = false
+        turnOffIcon.backgroundColor = .brown
+        addSubview(turnOffIcon)
     }
     
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            viewActionIndicator.widthAnchor.constraint(equalToConstant: 20),
-            viewActionIndicator.heightAnchor.constraint(equalToConstant: 2),
-            viewActionIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 2),
+            viewActionIndicator.widthAnchor.constraint(equalToConstant: 30),
+            viewActionIndicator.heightAnchor.constraint(equalToConstant: 4),
+            viewActionIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             viewActionIndicator.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
+//        NSLayoutConstraint.activate([
+//            iconsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            iconsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            iconsStackView.topAnchor.constraint(equalTo: viewActionIndicator.bottomAnchor, constant: 16),
+//            iconsStackView.heightAnchor.constraint(equalToConstant: 200),
+//            iconsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
+//        ])
+        
         NSLayoutConstraint.activate([
-            iconsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            iconsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            iconsStackView.topAnchor.constraint(equalTo: viewActionIndicator.bottomAnchor, constant: 16),
-            iconsStackView.heightAnchor.constraint(equalToConstant: 60)
+            effectsIcon.heightAnchor.constraint(equalToConstant: 55),
+            effectsIcon.widthAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            effectsIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            effectsIcon.topAnchor.constraint(equalTo: topAnchor, constant: 35)
         ])
+        
+        NSLayoutConstraint.activate([
+            muteIcon.heightAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            muteIcon.widthAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            muteIcon.leadingAnchor.constraint(equalTo: effectsIcon.trailingAnchor, constant: 20),
+            muteIcon.topAnchor.constraint(equalTo: effectsIcon.topAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            turnCameraIcon.heightAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            turnCameraIcon.widthAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            turnCameraIcon.leadingAnchor.constraint(equalTo: muteIcon.trailingAnchor, constant: 20),
+            turnCameraIcon.topAnchor.constraint(equalTo: effectsIcon.topAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            turnOffIcon.heightAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            turnOffIcon.widthAnchor.constraint(equalTo: effectsIcon.heightAnchor),
+            turnOffIcon.leadingAnchor.constraint(equalTo: turnCameraIcon.trailingAnchor, constant: 20),
+            turnOffIcon.topAnchor.constraint(equalTo: effectsIcon.topAnchor)
+        ])
+
+    
     }
     
     func additionalSetup() {
-        setRoundCorners([.topLeft,.topRight], radius: 8.0)
+//        setRoundCorners([.topLeft,.topRight], radius: 8.0)
         configureGaussianBlur()
-        
+        backgroundColor = .darkGray
     }
     
     func configureGaussianBlur() {
