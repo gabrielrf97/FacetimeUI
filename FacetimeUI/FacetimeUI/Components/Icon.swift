@@ -18,44 +18,80 @@ enum IconType {
     func getDefaultColor() -> UIColor {
         switch self {
         case .turnOff:
-            return .systemRed
+            return .appRed
         default:
-            return .systemGray
+            return .appLightGray
         }
     }
 
     func getActiveColor() -> UIColor {
-        return .systemRed
+        return .appWhite
     }
     
-//    func getIcon() -> UIImage {
-//        switch self {
-//        case .effects:
-//            return UIImage(imageLiteralResourceName: "camera.rotate")
-//        case mute:
-//            return UIImage(systemImage: "mic.slash.fill")
-//        case turnCamera:
-//            return UIImage(systemImage: "wand.and.stars.inverse")
-//        case turnOff:
-//            return UIImage(systemImage: "xmark")
-//        }
-//    }
+    func getTintColor(for state: Bool) -> UIColor {
+        if state {
+            return .appBlack
+        } else {
+            return .appWhite
+        }
+    }
+    
+    func getIconImage() -> UIImage {
+        switch self {
+        case .turnCamera:
+            return UIImage(systemName: "camera.rotate")!
+        case .mute:
+            return UIImage(systemName: "mic.slash.fill")!
+        case .effects:
+            return UIImage(systemName: "wand.and.stars.inverse")!
+        case .turnOff:
+            return UIImage(systemName: "xmark")!
+        }
+    }
+    
+    func canBeActive() -> Bool {
+        switch self {
+        case .turnCamera:
+            return false
+        case .mute:
+            return true
+        case .effects:
+            return true
+        case .turnOff:
+            return false
+        }
+    }
+    
+    func getTitle() -> String {
+        switch self {
+        case .turnOff:
+            return "desligar"
+        case .effects:
+            return "efeitos"
+        case .mute:
+            return "mudo"
+        case .turnCamera:
+            return "virar"
+        }
+    }
+    
 }
 
-fileprivate enum LayoutConstraints: CGFloat {
-    case buttonHeight = 20
+private enum LayoutConstraints: CGFloat {
+    case buttonHeight = 60
     case labelHeight = 18
 }
 
 class Icon: UIView, ViewCode {
     
-    var iconButton: UIView!
+    var iconButton: UIButton!
     var iconLabel: UILabel!
     
     var type: IconType!
     var isActive: Bool! {
         didSet {
             iconButton.backgroundColor = isActive ? type.getActiveColor() : type.getDefaultColor()
+            iconButton.imageView?.tintColor = type.getTintColor(for: isActive)
         }
     }
     
@@ -71,14 +107,20 @@ class Icon: UIView, ViewCode {
     }
     
     func createElements() {
-        iconButton = UIView()
+        iconButton = UIButton()
+        iconButton.setImage(type.getIconImage(), for: .normal)
+        iconButton.imageView?.tintColor = type.getTintColor(for: isActive)
         iconButton.backgroundColor = type.getDefaultColor()
-        iconButton.backgroundColor = .orange
         iconButton.translatesAutoresizingMaskIntoConstraints = false
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        iconButton.addGestureRecognizer(tap)
         addSubview(iconButton)
         
         iconLabel = UILabel()
-        iconLabel.backgroundColor = .purple
+        iconLabel.font = UIFont.systemFont(ofSize: 12)
+        iconLabel.text = type.getTitle()
+        iconLabel.textAlignment = .center
+        iconLabel.textColor = .appWhite
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iconLabel)
     }
@@ -87,25 +129,29 @@ class Icon: UIView, ViewCode {
         NSLayoutConstraint.activate([
             iconButton.heightAnchor.constraint(equalToConstant: LayoutConstraints.buttonHeight.rawValue),
             iconButton.widthAnchor.constraint(equalTo: iconButton.heightAnchor, multiplier: 1),
-            iconButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            iconButton.topAnchor.constraint(equalTo: topAnchor)
+            iconButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            iconButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            iconLabel.topAnchor.constraint(equalTo: iconButton.bottomAnchor),
+            iconLabel.topAnchor.constraint(equalTo: iconButton.bottomAnchor, constant: 2),
             iconLabel.leadingAnchor.constraint(equalTo: iconButton.leadingAnchor),
             iconLabel.trailingAnchor.constraint(equalTo: iconButton.trailingAnchor),
-            iconLabel.heightAnchor.constraint(equalToConstant: LayoutConstraints.labelHeight.rawValue)
+            iconLabel.heightAnchor.constraint(equalToConstant: 20),
+            iconLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     
     func additionalSetup() {
-        iconButton.layer.cornerRadius = iconButton.frame.height / 2
+        iconButton.layer.cornerRadius = 30
+        iconButton.imageView?.image = type.getIconImage()
         iconButton.layer.masksToBounds = true
-//        backgroundColor = .yellow
     }
     
     @objc func tapped() {
-        self.isActive = !isActive
+        if type.canBeActive() {
+            self.isActive = !isActive
+        }
+        //TODO: Perform types Action
     }
 }

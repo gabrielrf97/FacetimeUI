@@ -62,5 +62,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>We&apos;d like to access your camera to show your video to your friends</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need access to library to save your files.</string>
 </dict>
 </plist>

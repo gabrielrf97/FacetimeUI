@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06B10ACFAABCE39109F29CBC /* Pods_FacetimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BC8FFE60887A6905FDEC2 /* Pods_FacetimeUI.framework */; };
 		7D696338242B9261001530F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696337242B9261001530F1 /* AppDelegate.swift */; };
 		7D69633A242B9261001530F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696339242B9261001530F1 /* SceneDelegate.swift */; };
 		7D69633C242B9261001530F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69633B242B9261001530F1 /* ViewController.swift */; };
@@ -22,8 +23,7 @@
 		7D69636C242BB85C001530F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D69636B242BB85C001530F1 /* Main.storyboard */; };
 		7D69637A242C5025001530F1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696379242C5025001530F1 /* UIColorExt.swift */; };
 		7D69637C242CE1BA001530F1 /* CameraLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69637B242CE1BA001530F1 /* CameraLayer.swift */; };
-		FD4D596ABA3195D765553C0C /* Pods_FacetimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED99D4DAC709398A92B71C /* Pods_FacetimeUITests.framework */; };
-		FFC8374D8D69C11D3574588A /* Pods_FacetimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE77FDA11DCFCF1D340716E3 /* Pods_FacetimeUI.framework */; };
+		9180AEF9E21C736DD2B1BBBA /* Pods_FacetimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53A59E67E08ACD54460A207 /* Pods_FacetimeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		010DD37A8F5CCA0B2518612B /* Pods-FacetimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C0457904C7C1BE7D593D848 /* Pods-FacetimeUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUI.debug.xcconfig"; path = "Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI.debug.xcconfig"; sourceTree = "<group>"; };
+		0F0942CB1E08FD584AD55F79 /* Pods-FacetimeUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUI.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI.release.xcconfig"; sourceTree = "<group>"; };
+		387BC8FFE60887A6905FDEC2 /* Pods_FacetimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F6B51AE611E0416F78D7DF /* Pods-FacetimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D696334242B9261001530F1 /* FacetimeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacetimeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D696337242B9261001530F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D696339242B9261001530F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,10 +59,9 @@
 		7D69636B242BB85C001530F1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7D696379242C5025001530F1 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		7D69637B242CE1BA001530F1 /* CameraLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLayer.swift; sourceTree = "<group>"; };
-		BD5988ECED7E99889E1E658E /* Pods-FacetimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C2ED99D4DAC709398A92B71C /* Pods_FacetimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE77FDA11DCFCF1D340716E3 /* Pods_FacetimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF9B5BC5887089DCF6840D4 /* Pods-FacetimeUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUI.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI.release.xcconfig"; sourceTree = "<group>"; };
+		AB9676B0656A82FE6E7AD6DF /* Pods-FacetimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B53A59E67E08ACD54460A207 /* Pods_FacetimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B842C77051DD5D10FDB69D48 /* Pods-FacetimeUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUI.debug.xcconfig"; path = "Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC8374D8D69C11D3574588A /* Pods_FacetimeUI.framework in Frameworks */,
+				06B10ACFAABCE39109F29CBC /* Pods_FacetimeUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,29 +77,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD4D596ABA3195D765553C0C /* Pods_FacetimeUITests.framework in Frameworks */,
+				9180AEF9E21C736DD2B1BBBA /* Pods_FacetimeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50D6BB91AD0BD05A7F8EEC2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DE77FDA11DCFCF1D340716E3 /* Pods_FacetimeUI.framework */,
-				C2ED99D4DAC709398A92B71C /* Pods_FacetimeUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		69C57BB58640B382DDA34320 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7C0457904C7C1BE7D593D848 /* Pods-FacetimeUI.debug.xcconfig */,
-				EDF9B5BC5887089DCF6840D4 /* Pods-FacetimeUI.release.xcconfig */,
-				010DD37A8F5CCA0B2518612B /* Pods-FacetimeUITests.debug.xcconfig */,
-				BD5988ECED7E99889E1E658E /* Pods-FacetimeUITests.release.xcconfig */,
+				B842C77051DD5D10FDB69D48 /* Pods-FacetimeUI.debug.xcconfig */,
+				0F0942CB1E08FD584AD55F79 /* Pods-FacetimeUI.release.xcconfig */,
+				AB9676B0656A82FE6E7AD6DF /* Pods-FacetimeUITests.debug.xcconfig */,
+				53F6B51AE611E0416F78D7DF /* Pods-FacetimeUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,7 +102,7 @@
 				7D69634D242B9263001530F1 /* FacetimeUITests */,
 				7D696335242B9261001530F1 /* Products */,
 				69C57BB58640B382DDA34320 /* Pods */,
-				50D6BB91AD0BD05A7F8EEC2A /* Frameworks */,
+				CC900EC5CA3F89CF331393A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +194,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CC900EC5CA3F89CF331393A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				387BC8FFE60887A6905FDEC2 /* Pods_FacetimeUI.framework */,
+				B53A59E67E08ACD54460A207 /* Pods_FacetimeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,12 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D696353242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUI" */;
 			buildPhases = (
-				F2D8937E8E8458BF5107CDB3 /* [CP] Check Pods Manifest.lock */,
+				1943A98701D74571215B6166 /* [CP] Check Pods Manifest.lock */,
 				7D696330242B9261001530F1 /* Sources */,
 				7D696331242B9261001530F1 /* Frameworks */,
 				7D696332242B9261001530F1 /* Resources */,
-				B80FEBE3E8CDC1E60D3DEE74 /* [CP] Embed Pods Frameworks */,
 				7D696373242C31FC001530F1 /* Swiftlint */,
+				A8519539897C21C8E1D5A3F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,11 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D696356242B9263001530F1 /* Build configuration list for PBXNativeTarget "FacetimeUITests" */;
 			buildPhases = (
-				E52D68507DCCEAF14550F95C /* [CP] Check Pods Manifest.lock */,
+				9AF04E950F708E9F8B6D9BA7 /* [CP] Check Pods Manifest.lock */,
 				7D696346242B9263001530F1 /* Sources */,
 				7D696347242B9263001530F1 /* Frameworks */,
 				7D696348242B9263001530F1 /* Resources */,
-				7449044FB251F598A3A70576 /* [CP] Embed Pods Frameworks */,
+				FB4543EB32E600E8BD51EC6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,21 +305,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7449044FB251F598A3A70576 /* [CP] Embed Pods Frameworks */ = {
+		1943A98701D74571215B6166 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FacetimeUI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D696373242C31FC001530F1 /* Swiftlint */ = {
@@ -340,24 +345,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed. Download using 'brew install swiftlint' or ask Gabriel Rodrigues about it.\"\nfi\n";
 		};
-		B80FEBE3E8CDC1E60D3DEE74 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E52D68507DCCEAF14550F95C /* [CP] Check Pods Manifest.lock */ = {
+		9AF04E950F708E9F8B6D9BA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,26 +367,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2D8937E8E8458BF5107CDB3 /* [CP] Check Pods Manifest.lock */ = {
+		A8519539897C21C8E1D5A3F6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FacetimeUI-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB4543EB32E600E8BD51EC6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -568,7 +568,7 @@
 		};
 		7D696354242B9263001530F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C0457904C7C1BE7D593D848 /* Pods-FacetimeUI.debug.xcconfig */;
+			baseConfigurationReference = B842C77051DD5D10FDB69D48 /* Pods-FacetimeUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -587,7 +587,7 @@
 		};
 		7D696355242B9263001530F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDF9B5BC5887089DCF6840D4 /* Pods-FacetimeUI.release.xcconfig */;
+			baseConfigurationReference = 0F0942CB1E08FD584AD55F79 /* Pods-FacetimeUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -606,7 +606,7 @@
 		};
 		7D696357242B9263001530F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 010DD37A8F5CCA0B2518612B /* Pods-FacetimeUITests.debug.xcconfig */;
+			baseConfigurationReference = AB9676B0656A82FE6E7AD6DF /* Pods-FacetimeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -629,7 +629,7 @@
 		};
 		7D696358242B9263001530F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD5988ECED7E99889E1E658E /* Pods-FacetimeUITests.release.xcconfig */;
+			baseConfigurationReference = 53F6B51AE611E0416F78D7DF /* Pods-FacetimeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

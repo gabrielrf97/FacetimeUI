@@ -13,13 +13,11 @@ import AVFoundation
 class CallViewController: UIViewController, ViewCode {
 
     var cameraView: UIView!
-    var smallCameraLayer: CameraView!
+    var smallCameraLayer: UIView!
     var controllsView: ControllsView!
-    var printIcon: PrintIcon!
+    var printButton: PrintButton!
     
     var session: AVCaptureSession!
-    var device: AVCaptureDevice?
-    var input: AVCaptureDeviceInput?
     var output: AVCaptureMetadataOutput?
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -36,12 +34,13 @@ class CallViewController: UIViewController, ViewCode {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        smallCameraLayer.loadCamera()
+//        CameraLayer.createCamera(in: cameraView)
+        setupCamera()
     }
     
     func createElements() {
         
-        cameraView = CameraView()
+        cameraView = UIView()
         cameraView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cameraView)
         
@@ -49,43 +48,41 @@ class CallViewController: UIViewController, ViewCode {
         controllsView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controllsView)
         
-        smallCameraLayer = CameraView()
-        smallCameraLayer.backgroundColor = .yellow
+        smallCameraLayer = UIView()
+        smallCameraLayer.backgroundColor = .appWhite
         smallCameraLayer.layer.cornerRadius = 6.0
         smallCameraLayer.layer.masksToBounds = true
         smallCameraLayer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(smallCameraLayer)
         
-        printIcon = PrintIcon()
-        printIcon.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(printIcon)
+        printButton = PrintButton(in: self.view)
+        printButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(printButton)
     }
     
     func setupCamera() {
         session = AVCaptureSession()
         session.sessionPreset = .hd4K3840x2160
 
-        guard let _device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
-            let _input = try? AVCaptureDeviceInput(device: _device) else {
+        guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
+            let input = try? AVCaptureDeviceInput(device: device) else {
             return
         }
-        input = _input
-        device = _device
-        session.addInput(_input)
+
+        session.addInput(input)
         
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.frame.size = CGSize(width: view.frame.width/5, height: view.frame.height/7)
+        previewLayer.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
         previewLayer.videoGravity = .resizeAspectFill
         previewLayer.connection?.videoOrientation = .portrait
         previewLayer.zPosition = -1
-        self.smallCameraLayer.layer.addSublayer(previewLayer)
-        
+        self.cameraView.layer.addSublayer(previewLayer)
         session?.startRunning()
     }
-        
+    
     func setupConstraints() {
         cameraView.bottom(0).leading(0).trailing(0).top(0)
-        controllsView.bottom(0).leading(0).right(0).height(200)
+        controllsView.bottom(0).leading(0).right(0).top(600)
         
         NSLayoutConstraint.activate([
             smallCameraLayer.heightAnchor.constraint(equalToConstant: view.frame.height/7),
@@ -95,15 +92,15 @@ class CallViewController: UIViewController, ViewCode {
         ])
         
         NSLayoutConstraint.activate([
-            printIcon.heightAnchor.constraint(equalToConstant: 60),
-            printIcon.widthAnchor.constraint(equalTo: printIcon.heightAnchor),
-            printIcon.bottomAnchor.constraint(equalTo: controllsView.topAnchor, constant: -18),
-            printIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
+            printButton.heightAnchor.constraint(equalToConstant: 60),
+            printButton.widthAnchor.constraint(equalTo: printButton.heightAnchor),
+            printButton.bottomAnchor.constraint(equalTo: controllsView.topAnchor, constant: -18),
+            printButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
         ])
     }
     
     func additionalSetup() {
-        printIcon.setRadius()
+
     }
     
 }

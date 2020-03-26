@@ -12,9 +12,7 @@ import SnapshotTesting
 
 class FacetimeUITests: XCTestCase {
 
-    override func setUp() {
-        
-    }
+    override func setUp() {}
 
     override func tearDown() {}
 
@@ -26,8 +24,8 @@ class FacetimeUITests: XCTestCase {
 
 // MARK: Components UITests
     func testPrintIcon() {
-        let sut = PrintIcon(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-        sut.setRadius()
+        let rootView = CallViewController()
+        let sut = PrintButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60), in: rootView.view)
         assertSnapshot(matching: sut, as: .image)
     }
     

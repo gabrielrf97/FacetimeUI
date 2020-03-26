@@ -9,60 +9,13 @@
 import Foundation
 import UIKit
 
-class PrintIcon: UIView, ViewCode {
-    
-    var innerView: UIView!
-    
-    override var bounds: CGRect {
-        didSet {
-            self.setRadius()
-        }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func createElements() {
-        innerView = UIView()
-        innerView.backgroundColor = .appWhite
-        innerView.layer.borderColor = UIColor.appBlack.cgColor
-        innerView.layer.borderWidth = 2
-        innerView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(innerView)
-    }
-    
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            innerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
-            innerView.heightAnchor.constraint(equalTo: innerView.widthAnchor),
-            innerView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            innerView.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
-    }
-    
-    func additionalSetup() {
-        backgroundColor = .white
-    }
-    
-    func setRadius() {
-        layer.cornerRadius = 30
-        layer.masksToBounds = true
-        innerView.layer.cornerRadius = 25
-        innerView.layer.masksToBounds = true
-    }
-    
-}
-
 class PrintButton: UIButton {
     
-    override init(frame: CGRect = .zero) {
+    var rootView: UIView!
+    
+    init(frame: CGRect = .zero, in view: UIView) {
         super.init(frame: frame)
+        self.rootView = view
         setupButton()
     }
     
@@ -72,6 +25,20 @@ class PrintButton: UIButton {
     
     func setupButton() {
         setBackgroundImage(UIImage(named: "printButton"), for: .normal)
+        addTarget(self, action: #selector(takeScreenShot), for: .touchUpInside)
+    }
+    
+    @objc func takeScreenShot() {
+        let size = UIScreen.main.bounds.size
+        UIGraphicsBeginImageContext(size)
+        if let context = UIGraphicsGetCurrentContext() {
+            rootView.layer.render(in: context)
+        }
+        if let printedImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIImageWriteToSavedPhotosAlbum(printedImage, nil, nil, nil)
+        }
+        UIGraphicsEndImageContext()
+    
     }
     
 }
