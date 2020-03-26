@@ -5,8 +5,11 @@ target 'FacetimeUI' do
   use_frameworks!
   pod 'SteviaLayout'
   pod 'SwiftLint'
+ 
   target 'FacetimeUITests' do
     inherit! :search_paths
+    pod 'SnapshotTesting', '~> 1.7.2'
+    pod 'iOSSnapshotTestCase'
   end
 
 end

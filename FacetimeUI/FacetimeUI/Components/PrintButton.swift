@@ -13,6 +13,12 @@ class PrintIcon: UIView, ViewCode {
     
     var innerView: UIView!
     
+    override var bounds: CGRect {
+        didSet {
+            self.setRadius()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -24,9 +30,9 @@ class PrintIcon: UIView, ViewCode {
     
     func createElements() {
         innerView = UIView()
-        innerView.backgroundColor = .white
-        innerView.layer.borderColor = UIColor.black.cgColor
-        innerView.layer.borderWidth = 1.5
+        innerView.backgroundColor = .appWhite
+        innerView.layer.borderColor = UIColor.appBlack.cgColor
+        innerView.layer.borderWidth = 2
         innerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(innerView)
     }
@@ -49,6 +55,23 @@ class PrintIcon: UIView, ViewCode {
         layer.masksToBounds = true
         innerView.layer.cornerRadius = 25
         innerView.layer.masksToBounds = true
+    }
+    
+}
+
+class PrintButton: UIButton {
+    
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        setupButton()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupButton() {
+        setBackgroundImage(UIImage(named: "printButton"), for: .normal)
     }
     
 }

@@ -16,11 +16,12 @@
 		7D69635D242B9402001530F1 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69635C242B9402001530F1 /* CallViewController.swift */; };
 		7D696360242B94E3001530F1 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69635F242B94E3001530F1 /* Icon.swift */; };
 		7D696363242B95C1001530F1 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696362242B95C1001530F1 /* ViewCode.swift */; };
-		7D696365242B9988001530F1 /* PrintIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696364242B9988001530F1 /* PrintIcon.swift */; };
+		7D696365242B9988001530F1 /* PrintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696364242B9988001530F1 /* PrintButton.swift */; };
 		7D696367242B9CEE001530F1 /* ControllsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696366242B9CEE001530F1 /* ControllsView.swift */; };
 		7D69636A242BA572001530F1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696369242BA572001530F1 /* UIViewExt.swift */; };
 		7D69636C242BB85C001530F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D69636B242BB85C001530F1 /* Main.storyboard */; };
-		7D696372242BFEE8001530F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696371242BFEE8001530F1 /* CameraView.swift */; };
+		7D69637A242C5025001530F1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696379242C5025001530F1 /* UIColorExt.swift */; };
+		7D69637C242CE1BA001530F1 /* CameraLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69637B242CE1BA001530F1 /* CameraLayer.swift */; };
 		FD4D596ABA3195D765553C0C /* Pods_FacetimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED99D4DAC709398A92B71C /* Pods_FacetimeUITests.framework */; };
 		FFC8374D8D69C11D3574588A /* Pods_FacetimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE77FDA11DCFCF1D340716E3 /* Pods_FacetimeUI.framework */; };
 /* End PBXBuildFile section */
@@ -51,11 +52,12 @@
 		7D69635C242B9402001530F1 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		7D69635F242B94E3001530F1 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		7D696362242B95C1001530F1 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
-		7D696364242B9988001530F1 /* PrintIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintIcon.swift; sourceTree = "<group>"; };
+		7D696364242B9988001530F1 /* PrintButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintButton.swift; sourceTree = "<group>"; };
 		7D696366242B9CEE001530F1 /* ControllsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllsView.swift; sourceTree = "<group>"; };
 		7D696369242BA572001530F1 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		7D69636B242BB85C001530F1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		7D696371242BFEE8001530F1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		7D696379242C5025001530F1 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		7D69637B242CE1BA001530F1 /* CameraLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLayer.swift; sourceTree = "<group>"; };
 		BD5988ECED7E99889E1E658E /* Pods-FacetimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C2ED99D4DAC709398A92B71C /* Pods_FacetimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77FDA11DCFCF1D340716E3 /* Pods_FacetimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,9 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				7D69635F242B94E3001530F1 /* Icon.swift */,
-				7D696364242B9988001530F1 /* PrintIcon.swift */,
+				7D696364242B9988001530F1 /* PrintButton.swift */,
 				7D696366242B9CEE001530F1 /* ControllsView.swift */,
-				7D696371242BFEE8001530F1 /* CameraView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +189,7 @@
 			children = (
 				7D696368242BA566001530F1 /* Extensions */,
 				7D696362242B95C1001530F1 /* ViewCode.swift */,
+				7D69637B242CE1BA001530F1 /* CameraLayer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				7D696369242BA572001530F1 /* UIViewExt.swift */,
+				7D696379242C5025001530F1 /* UIColorExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				7D696331242B9261001530F1 /* Frameworks */,
 				7D696332242B9261001530F1 /* Resources */,
 				B80FEBE3E8CDC1E60D3DEE74 /* [CP] Embed Pods Frameworks */,
+				7D696373242C31FC001530F1 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -230,6 +234,7 @@
 				7D696346242B9263001530F1 /* Sources */,
 				7D696347242B9263001530F1 /* Frameworks */,
 				7D696348242B9263001530F1 /* Resources */,
+				7449044FB251F598A3A70576 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +305,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7449044FB251F598A3A70576 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D696373242C31FC001530F1 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed. Download using 'brew install swiftlint' or ask Gabriel Rodrigues about it.\"\nfi\n";
+		};
 		B80FEBE3E8CDC1E60D3DEE74 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,13 +409,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D69633C242B9261001530F1 /* ViewController.swift in Sources */,
-				7D696365242B9988001530F1 /* PrintIcon.swift in Sources */,
+				7D696365242B9988001530F1 /* PrintButton.swift in Sources */,
 				7D696338242B9261001530F1 /* AppDelegate.swift in Sources */,
-				7D696372242BFEE8001530F1 /* CameraView.swift in Sources */,
 				7D69635D242B9402001530F1 /* CallViewController.swift in Sources */,
 				7D696367242B9CEE001530F1 /* ControllsView.swift in Sources */,
+				7D69637C242CE1BA001530F1 /* CameraLayer.swift in Sources */,
 				7D696360242B94E3001530F1 /* Icon.swift in Sources */,
 				7D69633A242B9261001530F1 /* SceneDelegate.swift in Sources */,
+				7D69637A242C5025001530F1 /* UIColorExt.swift in Sources */,
 				7D69636A242BA572001530F1 /* UIViewExt.swift in Sources */,
 				7D696363242B95C1001530F1 /* ViewCode.swift in Sources */,
 			);

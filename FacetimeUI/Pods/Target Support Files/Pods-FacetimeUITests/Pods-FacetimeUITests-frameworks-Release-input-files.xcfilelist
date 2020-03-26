@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework
+${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework
