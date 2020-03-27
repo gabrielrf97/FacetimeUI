@@ -1,6 +1,12 @@
 # FacetimeUI
 This repo contains the code of a replica of FaceTime, using just ViewCode.
 
+Current status: (updated 27/03/20, at 5pm)
+
+![Alt Text](https://media.giphy.com/media/chiCsn8N6emjMFomNz/giphy.gif)
+
+**Obs** Camera View is working on device already.
+
 ### View Architecture
 So far, the app view architecture is the following:
 - Viewcontroller:
