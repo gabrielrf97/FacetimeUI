@@ -16,6 +16,8 @@ protocol ViewCode {
 }
 
 extension ViewCode {
+    func additionalSetup() {}
+    
     func setupView() {
         createElements()
         setupConstraints()

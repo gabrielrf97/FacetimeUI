@@ -15,6 +15,7 @@ class CallViewController: UIViewController, ViewCode {
     var cameraView: UIView!
     var smallCameraLayer: UIView!
     var controllsView: ControllsView!
+    var effectsView: EffectsView!
     var printButton: PrintButton!
     
     var session: AVCaptureSession!
@@ -40,11 +41,18 @@ class CallViewController: UIViewController, ViewCode {
     
     func createElements() {
         
+        effectsView = EffectsView()
+        effectsView.translatesAutoresizingMaskIntoConstraints = false
+        effectsView.clipsToBounds = false
+        view.addSubview(effectsView)
+        view.sendSubviewToBack(effectsView)
+        
         cameraView = UIView()
         cameraView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cameraView)
         
         controllsView = ControllsView()
+        controllsView.effectsDelegate = self
         controllsView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controllsView)
         
@@ -81,8 +89,9 @@ class CallViewController: UIViewController, ViewCode {
     }
     
     func setupConstraints() {
+        effectsView.bottom(0).leading(0).right(0).height(160)
         cameraView.bottom(0).leading(0).trailing(0).top(0)
-        controllsView.bottom(0).leading(0).right(0).top(600)
+        controllsView.bottom(0).leading(0).right(0).height(160)
         
         NSLayoutConstraint.activate([
             smallCameraLayer.heightAnchor.constraint(equalToConstant: view.frame.height/7),
@@ -94,13 +103,66 @@ class CallViewController: UIViewController, ViewCode {
         NSLayoutConstraint.activate([
             printButton.heightAnchor.constraint(equalToConstant: 60),
             printButton.widthAnchor.constraint(equalTo: printButton.heightAnchor),
-            printButton.bottomAnchor.constraint(equalTo: controllsView.topAnchor, constant: -18),
+            printButton.bottomAnchor.constraint(equalTo: effectsView.topAnchor, constant: -18),
             printButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
         ])
     }
     
     func additionalSetup() {
-
+        smallCameraLayer.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(smallViewDragged(_:))))
     }
     
+    @objc func smallViewDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+        let translation = gestureRecognizer.translation(in: smallCameraLayer)
+        smallCameraLayer.frame.origin.x += translation.x
+        smallCameraLayer.frame.origin.y += translation.y
+        gestureRecognizer.setTranslation(.zero, in: smallCameraLayer)
+        if gestureRecognizer.state == .ended {
+            repositionateView()
+        }
+    }
+    
+    func repositionateView() {
+        let xPosition = smallCameraLayer.frame.midX
+        let yPosition = smallCameraLayer.frame.midY
+        
+        var newX: CGFloat = 0.0
+        var newY: CGFloat = 0.0
+        
+        if xPosition < UIScreen.main.bounds.midX {
+            newX = 12
+        } else {
+            newX = UIScreen.main.bounds.width - 12 - self.smallCameraLayer.frame.width
+        }
+        
+        if yPosition < UIScreen.main.bounds.midY {
+            newY = 12 + 40 //TODO: Refactorare so it works resposivelly
+        } else {
+            newY = UIScreen.main.bounds.height - 12 - self.smallCameraLayer.frame.height - controllsView.heightConstraint!.constant
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.smallCameraLayer.frame.origin = CGPoint(x: newX, y: newY)
+            self.smallCameraLayer.updateConstraintsIfNeeded()
+        })
+    }
+}
+
+extension CallViewController: EffectsViewProtocol {
+    func hideEffectsView() {
+        self.effectsView.heightConstraint?.constant -= 60
+        self.effectsView.hideCollectionView()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func showEffectsView() {
+        self.effectsView.heightConstraint?.constant += 60
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: { _ in
+            self.effectsView.showCollectionView()
+        })
+    }
 }

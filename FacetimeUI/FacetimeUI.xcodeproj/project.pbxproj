@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06B10ACFAABCE39109F29CBC /* Pods_FacetimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BC8FFE60887A6905FDEC2 /* Pods_FacetimeUI.framework */; };
+		7D527004242E54AB00B5DAD7 /* EffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D527003242E54AB00B5DAD7 /* EffectsView.swift */; };
+		7D527006242E596E00B5DAD7 /* EffectTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D527005242E596E00B5DAD7 /* EffectTypeCell.swift */; };
+		7D527008242E7E4A00B5DAD7 /* CallButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D527007242E7E4A00B5DAD7 /* CallButtonsStackView.swift */; };
 		7D696338242B9261001530F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696337242B9261001530F1 /* AppDelegate.swift */; };
 		7D69633A242B9261001530F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D696339242B9261001530F1 /* SceneDelegate.swift */; };
 		7D69633C242B9261001530F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69633B242B9261001530F1 /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 		0F0942CB1E08FD584AD55F79 /* Pods-FacetimeUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUI.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUI/Pods-FacetimeUI.release.xcconfig"; sourceTree = "<group>"; };
 		387BC8FFE60887A6905FDEC2 /* Pods_FacetimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacetimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F6B51AE611E0416F78D7DF /* Pods-FacetimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacetimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FacetimeUITests/Pods-FacetimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D527003242E54AB00B5DAD7 /* EffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsView.swift; sourceTree = "<group>"; };
+		7D527005242E596E00B5DAD7 /* EffectTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectTypeCell.swift; sourceTree = "<group>"; };
+		7D527007242E7E4A00B5DAD7 /* CallButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButtonsStackView.swift; sourceTree = "<group>"; };
 		7D696334242B9261001530F1 /* FacetimeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacetimeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D696337242B9261001530F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D696339242B9261001530F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 				7D69635F242B94E3001530F1 /* Icon.swift */,
 				7D696364242B9988001530F1 /* PrintButton.swift */,
 				7D696366242B9CEE001530F1 /* ControllsView.swift */,
+				7D527003242E54AB00B5DAD7 /* EffectsView.swift */,
+				7D527005242E596E00B5DAD7 /* EffectTypeCell.swift */,
+				7D527007242E7E4A00B5DAD7 /* CallButtonsStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D69633C242B9261001530F1 /* ViewController.swift in Sources */,
+				7D527008242E7E4A00B5DAD7 /* CallButtonsStackView.swift in Sources */,
 				7D696365242B9988001530F1 /* PrintButton.swift in Sources */,
 				7D696338242B9261001530F1 /* AppDelegate.swift in Sources */,
 				7D69635D242B9402001530F1 /* CallViewController.swift in Sources */,
@@ -419,6 +429,8 @@
 				7D69637A242C5025001530F1 /* UIColorExt.swift in Sources */,
 				7D69636A242BA572001530F1 /* UIViewExt.swift in Sources */,
 				7D696363242B95C1001530F1 /* ViewCode.swift in Sources */,
+				7D527004242E54AB00B5DAD7 /* EffectsView.swift in Sources */,
+				7D527006242E596E00B5DAD7 /* EffectTypeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

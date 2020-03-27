@@ -9,17 +9,22 @@
 import Foundation
 import UIKit
 
+protocol EffectsViewProtocol: class {
+    func hideEffectsView()
+    func showEffectsView()
+}
+
 class ControllsView: UIView, ViewCode {
     
     var viewActionIndicator: UIView!
-    var iconsStackView: UIStackView!
-    var effectsIcon: Icon!
-    var muteIcon: Icon!
-    var turnCameraIcon: Icon!
-    var turnOffIcon: Icon!
+    var iconsStackView: CallButtonsStackView!
     var blurredView: UIView!
+    var scrollView: UIScrollView!
+    var effectsCollectionView: UICollectionView!
+    let collectionViewFlow = UICollectionViewFlowLayout()
     
     var isShowingEffectsView = false
+    weak var effectsDelegate: EffectsViewProtocol?
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -31,6 +36,12 @@ class ControllsView: UIView, ViewCode {
     }
     
     func createElements() {
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120))
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = true
+        scrollView.showsHorizontalScrollIndicator = true
+        configureScrollView()
+        addSubview(scrollView)
         
         blurredView = UIView()
         blurredView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,46 +58,41 @@ class ControllsView: UIView, ViewCode {
         viewActionIndicator.layer.cornerRadius = 2
         addSubview(viewActionIndicator)
         
-        iconsStackView = UIStackView()
-        iconsStackView.distribution = .fillProportionally
-        iconsStackView.alignment = .center
-        iconsStackView.axis = .horizontal
-        iconsStackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(iconsStackView)
+        effectsCollectionView = UICollectionView(frame: CGRect(x: UIScreen.main.bounds.width,
+                                                               y: 0,
+                                                               width: UIScreen.main.bounds.width,
+                                                               height: scrollView.frame.height),
+                                                collectionViewLayout: collectionViewFlow)
+        effectsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionViewFlow.scrollDirection = .horizontal
+        effectsCollectionView.delegate = self
+        effectsCollectionView.dataSource = self
+        effectsCollectionView.register(EffectTypeCell.self, forCellWithReuseIdentifier: EffectTypeCell.identifier)
+        effectsCollectionView.backgroundColor = .clear
+        scrollView.addSubview(effectsCollectionView)
         
-        effectsIcon = Icon(type: .effects)
-        effectsIcon.translatesAutoresizingMaskIntoConstraints = false
-        iconsStackView.addArrangedSubview(effectsIcon)
-
-        muteIcon = Icon(type: .mute)
-        muteIcon.translatesAutoresizingMaskIntoConstraints = false
-        iconsStackView.addArrangedSubview(muteIcon)
-
-        turnCameraIcon = Icon(type: .turnCamera)
-        turnCameraIcon.translatesAutoresizingMaskIntoConstraints = false
-        iconsStackView.addArrangedSubview(turnCameraIcon)
-
-        turnOffIcon = Icon(type: .turnOff)
-        turnOffIcon.translatesAutoresizingMaskIntoConstraints = false
-        iconsStackView.addArrangedSubview(turnOffIcon)
+        iconsStackView = CallButtonsStackView()
+        iconsStackView.backgroundColor = .blue
+        iconsStackView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(iconsStackView)
     }
     
     func setupConstraints() {
-        blurredView.leading(0).trailing(0).top(0).bottom(0)
-        viewActionIndicator.width(30).height(4).top(4).centerHorizontally()
-        iconsStackView.left(20).right(20).bottom(0).height(100)
-        effectsIcon.height(200).width(100)
-        muteIcon.height(200).width(100)
-        turnCameraIcon.height(200).width(100)
-        turnOffIcon.height(200).width(100)
+        viewActionIndicator.width(30).height(4).top(8).centerHorizontally()
+        scrollView.leading(0).trailing(0).bottom(20).top(20)
+        iconsStackView.width(UIScreen.main.bounds.width).height(120).centerVertically()
+    }
+    
+    func configureScrollView() {
+        let contentWidth = UIScreen.main.bounds.width * 2
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.height)
     }
     
     func additionalSetup() {
         layer.cornerRadius = 16.0
         layer.masksToBounds = true
-        blurredView.blurView()
         backgroundColor = .appDarkGray
-        self.alpha = 0.7
+//        self.alpha = 0.7
         createTapTarget()
     }
     
@@ -101,17 +107,46 @@ class ControllsView: UIView, ViewCode {
     }
     
     func hideEffectsView() {
-        
         UIView.animate(withDuration: 0.3, animations: {
-            self.topConstraint?.constant -= 50
-            self.layoutIfNeeded()
+            self.viewActionIndicator.alpha = 1.0
         })
+        scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), animated: true)
+        effectsDelegate?.hideEffectsView()
     }
     
     func showEffectsView() {
         UIView.animate(withDuration: 0.3, animations: {
-            self.topConstraint?.constant += 50
-            self.layoutIfNeeded()
+            self.viewActionIndicator.alpha = 0.0
         })
+        scrollView.scrollRectToVisible(CGRect(x: UIScreen.main.bounds.width, y: 0, width: UIScreen.main.bounds.width, height: 100), animated: true)
+        effectsDelegate?.showEffectsView()
     }
+}
+
+extension ControllsView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectTypeCell.identifier, for: indexPath) as? EffectTypeCell else {
+            return UICollectionViewCell()
+        }
+        cell.backgroundColor = .appLightGray
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: collectionView.frame.width / 2 - 50, bottom: 0, right: collectionView.frame.width / 2 - 50)
+    }
+
 }
