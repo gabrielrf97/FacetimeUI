@@ -109,6 +109,8 @@ class ControllsView: UIView, ViewCode {
     func hideEffectsView() {
         UIView.animate(withDuration: 0.3, animations: {
             self.viewActionIndicator.alpha = 1.0
+        }, completion: { _ in
+            self.effectsCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredVertically, animated: false)
         })
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), animated: true)
         effectsDelegate?.hideEffectsView()

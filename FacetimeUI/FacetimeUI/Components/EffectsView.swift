@@ -13,7 +13,7 @@ import Stevia
 class EffectsView: UIView, ViewCode {
     
     var effectsColletionView: UICollectionView!
-    let flowLayout = UICollectionViewLayout()
+    var flowLayout = UICollectionViewFlowLayout()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -25,18 +25,18 @@ class EffectsView: UIView, ViewCode {
     }
     
     func createElements() {
-        effectsColletionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 120, height: 60), collectionViewLayout: flowLayout)
-        effectsColletionView.translatesAutoresizingMaskIntoConstraints = false
-        effectsColletionView.backgroundColor = .systemPink
-        effectsColletionView.alpha = 0.0
+        flowLayout.scrollDirection = .horizontal
+        effectsColletionView = UICollectionView(frame: CGRect(x: 0, y: 10, width: UIScreen.main.bounds.width, height: 50), collectionViewLayout: flowLayout)
         effectsColletionView.delegate = self
         effectsColletionView.dataSource = self
+        effectsColletionView.isScrollEnabled = true
+        effectsColletionView.backgroundColor = .clear
         effectsColletionView.register(EffectTypeCell.self, forCellWithReuseIdentifier: EffectTypeCell.identifier)
         addSubview(effectsColletionView)
     }
     
     func setupConstraints() {
-        effectsColletionView.top(10).leading(0).trailing(0).height(45)
+        effectsColletionView.top(10).leading(0).trailing(0).height(40)
     }
     
     func additionalSetup() {
@@ -44,13 +44,13 @@ class EffectsView: UIView, ViewCode {
         layer.masksToBounds = true
         backgroundColor = .appDarkGray
     }
-    
+
     func showCollectionView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.effectsColletionView.alpha = 1.0
         })
     }
-    
+
     func hideCollectionView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.effectsColletionView.alpha = 0.0
@@ -64,21 +64,21 @@ extension EffectsView: UICollectionViewDelegate, UICollectionViewDataSource {
         return 10
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectTypeCell.identifier, for: indexPath) as? EffectTypeCell else {
+            return UICollectionViewCell()
+        }
         return cell
     }
 }
 
 extension EffectsView: UICollectionViewDelegateFlowLayout {
-    @objc(collectionView:layout:sizeForItemAtIndexPath:)
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: 10)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 32)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
 }
+

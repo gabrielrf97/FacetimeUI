@@ -42,7 +42,7 @@ class EffectTypeCell: UICollectionViewCell, ViewCode {
         layer.borderColor = UIColor.appWhite.cgColor
         backgroundColor = .yellow
         layer.masksToBounds = true
-        layer.cornerRadius = 6
+        layer.cornerRadius = 14
     }
     
 }
